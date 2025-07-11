@@ -46,7 +46,7 @@ Mat superResolucion(const Mat& img, cv::dnn_superres::DnnSuperResImpl& sr){
 
 int main(int argc, char* args[]){
     // string path = "./models/FSRCNN_x4.pb";
-    string path = "LapSRN_x4.pb";
+    string path = "Models/LapSRN_x4.pb";
     string modelo = "lapsrn";
     int escala = 4;
     cv::dnn_superres::DnnSuperResImpl sr;

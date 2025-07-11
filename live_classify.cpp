@@ -32,7 +32,7 @@ int main(int argc, char** argv) {
     // 1) Carga de etiquetas de ImageNet
     std::vector<std::string> classNames;
     {
-        std::ifstream ifs("imagenet_classes.txt");
+        std::ifstream ifs("Labels/imagenet_classes.txt");
         if (!ifs.is_open()) {
             std::cerr << "Error: no se pudo abrir imagenet_classes.txt\n";
             return 1;
@@ -45,7 +45,7 @@ int main(int argc, char** argv) {
     }
 
     // 2) Carga del modelo ONNX
-    cv::dnn::Net net = cv::dnn::readNetFromONNX("mobilenetv3-small-100.onnx");
+    cv::dnn::Net net = cv::dnn::readNetFromONNX("Models/mobilenetv3-small-100.onnx");
 
     // 3) Configuración de backend/target según flag
     if (useGPU) {

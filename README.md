@@ -101,6 +101,50 @@ Por ejemplo:
   ```
   - No requiere parámetros (modelos y vídeo están preconfigurados).
 
+## Comprobar uso GPU
+
+Para comprobar:
+```bash
+watch -n 1 nvidia-smi
+```
+
+Fijarce en el porcentaje(25%):
+```bash
+Wed Jun 25 12:51:07 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 575.64.01              Driver Version: 576.80         CUDA Version: 12.9     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce MX450           On  |   00000000:01:00.0 Off |                  N/A |
+| N/A   60C    P0            N/A  / 5001W |     115MiB /   2048MiB |     25%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A            4835      C   /optimized                            N/A      |
++-----------------------------------------------------------------------------------------+
+```
+
+O bien:
+```bash
+nvidia-smi --query-gpu=utilization.gpu,utilization.memory,memory.used,memory.total --format=csv,noheader,nounits -l 1
+```
+
+```bash
+0, 0, 46, 2048
+6, 2, 115, 2048
+22, 7, 115, 2048
+24, 8, 115, 2048
+```
+
+
 ## Resultados
 
 ### Configuración del Entorno

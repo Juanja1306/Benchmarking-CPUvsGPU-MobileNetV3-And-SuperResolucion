@@ -173,14 +173,16 @@ nvidia-smi --query-gpu=utilization.gpu,utilization.memory,memory.used,memory.tot
 | CPU                          | 1.62 FPS     |
 | GPU (NVIDIA GeForce MX450)   | 5.20 FPS     |
 
-### Resultados Cuantitativos
+### Comparación de Pipelines CPU y GPU
+
+#### Resultados Cuantitativos
 
 | Operación           | Tiempo medio por frame |
 |---------------------|------------------------|
 | CPU pipeline        | 1.16884 ms             |
 | GPU-only pipeline   | 8.44291 ms             |
 
-### Evaluación con Carga Repetida
+#### Evaluación con Carga Repetida
 
 | Métrica                  | Valor        |
 |--------------------------|--------------|

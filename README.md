@@ -5,8 +5,12 @@ Este repositorio contiene implementaciones para comparar el desempeño de CPU vs
 ## Estructura de archivos
 
 - **Comparación de Rendimiento CPU vs GPU con MobileNetV3**: `live_classify.cpp`
+  - Modelo: `mobilenetv3-small-100.onnx` (ONNX) para clasificación multilabel de ImageNet desde un stream MJPEG.
 - **Comparación de Rendimiento CPU vs GPU en Super Resolución de Video**: `Principal.cpp`
-- **Desempeño Comparativo de Pipelines de Visión por Computadora en CPU y GPU usando OpenCV**: `preprocess_cpu_gpu.cpp`, `optimized2.cpp`
+  - Modelo: `LapSRN_x4.pb` (Protobuf) para superresolución x4 de vídeo usando LapSRN (Laplacian Pyramid Super-Resolution Network).
+- **Desempeño Comparativo de Pipelines de Visión por Computadora en CPU y GPU usando OpenCV**:
+  - `preprocess_cpu_gpu.cpp`: pipeline clásico de preprocesamiento (GaussianBlur, erode, dilate, Canny y equalizeHist) comparando rendimiento CPU vs GPU mediante GpuMat.
+  - `optimized2.cpp`: benchmark de GaussianBlur (Size=15×15, sigma=3.0) en 100 iteraciones para comparar tiempos de ejecución en CPU vs GPU.
 
 ## Requisitos
 

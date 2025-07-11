@@ -153,3 +153,8 @@ Por ejemplo:
 - Cuando se realizan múltiples operaciones en cadena dentro de la GPU.
 - En sistemas embebidos con soporte CUDA y necesidades de procesamiento eficiente.
 - No siempre es rentable para tareas simples o imágenes pequeñas y cuando la GPU es de gama baja como en este caso.
+
+
+# Conclusion
+
+Este experimento demuestra la importancia de evaluar cuidadosamente el contexto antes de decidir si usar GPU. La aceleración por GPU es poderosa pero debe usarse de forma estratégica. El uso de GPU-only pipelines permite ahorrar tiempo en casos de carga elevada, aunque en tareas livianas el CPU puede superar en eficiencia por la menor sobrecarga de transferencia.
